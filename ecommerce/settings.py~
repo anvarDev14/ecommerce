@@ -87,11 +87,8 @@ USE_TZ = True
 
 # Statik va media fayllar sozlamalari
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # collectstatic natijasi shu yerga tushadi
-STATICFILES_DIRS = [
-    STATIC_DIR,  # local static fayllar
-]
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
