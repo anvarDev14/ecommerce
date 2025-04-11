@@ -1,13 +1,21 @@
 server {
-    listen 80;
+    listen 8099;
     server_name 194.242.56.190;
+
+    # Fayl yuklash limiti
     client_max_body_size 20M;
+
+    # Statik fayllar
     location /static/ {
         alias /app/staticfiles/;
     }
+
+    # Media fayllar
     location /media/ {
         alias /app/media/;
     }
+
+    # Boshqa so‘rovlar app ga ketadi
     location / {
         proxy_pass http://app:8004;
         proxy_set_header Host $host;
