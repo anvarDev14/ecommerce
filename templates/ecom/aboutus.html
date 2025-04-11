@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="uz" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Elektron tijorat</title>
+  <style media="screen">
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+    h3 {
+      text-align: center;
+      color: #333;
+      font-size: 24px;
+      margin: 20px 0;
+    }
+    .intro-text {
+      text-align: center;
+      font-size: 18px;
+      color: #555;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+  {% if request.user.is_authenticated %}
+    {% include "ecom/customer_navbar.html" %}
+  {% else %}
+    {% include "ecom/navbar.html" %}
+  {% endif %}
+  <br><br><br>
+  <h3>"Python va Django veb freymvorki yordamida yaratilgan onlayn elektron tijorat saytiga asoslangan oddiy loyiha. Ushbu Django loyihasi ikkinchi kurs IT talabalari uchun kollej loyihalarida foydalanishi mumkin bo‘lgan barcha muhim xususiyatlarni o‘z ichiga oladi."</h3>
+  <br><br>
+  <div class="intro-text">
+    anvarDev: Men Anvarman. Dasturchiman. Texnologiyalarni yaxshi ko‘raman. Ochiq kodli loyihalarni qo‘llab-quvvatlayman va ularda ishtirok etaman.
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  {% include "ecom/footer.html" %}
+</body>
+<!--
+Ishlab chiqaruvchi: anvarDev
+-->
+
+</html>
